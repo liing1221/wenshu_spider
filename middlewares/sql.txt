@@ -1,0 +1,68 @@
+﻿CREATE TABLE `wenshu_patent_cases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `JSTJ` varchar(255) DEFAULT NULL COMMENT '检索条件',
+  `JSJGSL` int DEFAULT NULL COMMENT '检索结果数量',
+  `AJMC` varchar(64) DEFAULT NULL COMMENT '案件名称',
+  `AJLX` varchar(16)  DEFAULT NULL COMMENT '案件类型',
+  `AH` varchar(64) DEFAULT NULL COMMENT '案号',
+  `SPCX` varchar(16) DEFAULT NULL COMMENT '审判程序',
+  `FYMC` varchar(64) DEFAULT NULL COMMENT '法院名称',
+  `CPRQ` date DEFAULT NULL COMMENT '裁判日期',
+  `CPYZDYW` text DEFAULT NULL COMMENT '裁判要旨段原文',
+  `BGKLY` text DEFAULT NULL COMMENT '不公开理由',
+  `WSLX` varchar(16) DEFAULT NULL COMMENT '文书类型',
+  `docid` varchar(64) DEFAULT NULL COMMENT '文书ID',
+  `status`varchar(4) DEFAULT NULL COMMENT '0未处理，1已处理',
+  `TCSQR` text DEFAULT NULL COMMENT '提出申请人或原告',
+  `BSQR` text DEFAULT NULL COMMENT '被提出申请人或被告',
+  `YSBG` text DEFAULT NULL COMMENT '原审被告',
+  `YSDSR` text DEFAULT NULL COMMENT '原审第三人',
+  `SPZ` varchar(16) DEFAULT NULL COMMENT '审判长',
+  `DLSPY` varchar(32) DEFAULT NULL COMMENT '代理审判员',
+  `SPY` varchar(32) DEFAULT NULL COMMENT '审判员',
+  `PSY` varchar(32) DEFAULT NULL COMMENT '陪审员',
+  `SJY`varchar(16) DEFAULT NULL COMMENT '书记员',
+  `WBSB` text DEFAULT NULL COMMENT '首部',
+  `DSRXX` text DEFAULT NULL COMMENT '原被告等参与人部分',
+  `SSJL` text DEFAULT NULL COMMENT '事实',
+  `CPYZ` text DEFAULT NULL COMMENT '理由',
+  `PJJG` text DEFAULT NULL COMMENT '结果',
+  `WBWB` text DEFAULT NULL COMMENT '尾部',
+  `FYID` varchar(16) DEFAULT NULL COMMENT '法院ID',
+  `FYDS` varchar(16) DEFAULT NULL COMMENT '法院地市',
+  `FYSF` varchar(16) DEFAULT NULL COMMENT '法院省份',
+  `FYQX` varchar(16) DEFAULT NULL COMMENT '法院区县',
+  `FYQY` varchar(16) DEFAULT NULL COMMENT '法院区域',
+  `AJJBQKYW` text DEFAULT NULL COMMENT '案件基本情况段原文',
+  `WBSBDLYW` text DEFAULT NULL COMMENT '文本首部段落原文',
+  `DocContent` text DEFAULT NULL COMMENT 'DocContent',
+  `BZWS` text DEFAULT NULL COMMENT '补正文书',
+  `SSJLDYW` text DEFAULT NULL COMMENT '诉讼记录段原文',
+  `PJJGDYW` text DEFAULT NULL COMMENT '判决结果段原文',
+  `WSWBYW` text DEFAULT NULL COMMENT '文本尾部原文',
+  `SSCYRXXBFYW` text DEFAULT NULL COMMENT '诉讼参与人信息部分原文',
+  `WSQWLX` varchar(16) DEFAULT NULL COMMENT '文书全文类型',
+  `JAFS` varchar(16) DEFAULT NULL COMMENT '结案方式',
+  `XLCJ` varchar(16) DEFAULT NULL COMMENT '效力层级',
+  `FJYW` text DEFAULT NULL COMMENT '附加原文',
+  `APN` varchar(32) DEFAULT NULL COMMENT '专利号',
+  `DOC` VARCHAR(128) DEFAULT NULL COMMENT '文书文档(txt)路径',
+  `WSFBRQ` datetime DEFAULT NULL COMMENT '文书网发布日期',
+  `create_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+
+alter table wenshu_patent_cases modify id int;
+drop table wenshu_patent_cases;
+ALTER TABLE `wenshu_patent_cases` ADD `PSY` varchar(32) DEFAULT NULL COMMENT '陪审员' AFTER `SPY`;
+
+
+
+
+
+
+
